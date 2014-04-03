@@ -5,6 +5,6 @@
                   android:layout_height="match_parent">
         <EditTextPreference
                 android:key="preference_key_ip_address"
-                android:title="""IP Address"
-                android:summary="></EditTextPreference>
+                android:title="IP Address"
+                android:summary="Host IP Address"></EditTextPreference>
                   </PreferenceScreen>
