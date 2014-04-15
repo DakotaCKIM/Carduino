@@ -12,12 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2c7f734-cae7-4f0b-9eef-de371f8ab44e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/UDPSender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/ControllerFragment.java" afterPath="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/ControllerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/PreferencesActivity.java" afterPath="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/PreferencesActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/PreferencesFragment.java" afterPath="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/PreferencesFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_preferences.xml" afterPath="$PROJECT_DIR$/res/layout/activity_preferences.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment_preferences.xml" afterPath="$PROJECT_DIR$/res/layout/fragment_preferences.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Carduino_CalculatedToast.iws" />
@@ -156,13 +151,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UDPSender.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UDPSender.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/UDPSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="8" selection-start="370" selection-end="370" vertical-scroll-proportion="0.28938907" vertical-offset="0" max-vertical-offset="933">
+            <state line="32" column="28" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="71" selection-start="126" selection-end="126" vertical-scroll-proportion="0.059275523" vertical-offset="0" max-vertical-offset="1278">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,6 +197,7 @@
         <option value="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/PreferencesActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/ControllerFragment.java" />
         <option value="$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/UDPSender.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -525,7 +530,11 @@
       <created>1396540529086</created>
       <updated>1396540529086</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit before merge">
+      <created>1397575587543</created>
+      <updated>1397575587543</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -575,7 +584,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="first&#10;" />
     <MESSAGE value="Created Preferences Fragment and XML." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Preferences Fragment and XML." />
+    <MESSAGE value="Commit before merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit before merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -747,10 +757,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Carduino_CalculatedToast/UDPSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="8" selection-start="370" selection-end="370" vertical-scroll-proportion="0.28938907" vertical-offset="0" max-vertical-offset="933">
+        <state line="32" column="28" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="71" selection-start="126" selection-end="126" vertical-scroll-proportion="0.059275523" vertical-offset="0" max-vertical-offset="1278">
+          <folding />
         </state>
       </provider>
     </entry>
