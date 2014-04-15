@@ -1,6 +1,7 @@
 package com.example.Carduino_CalculatedToast;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,7 +30,7 @@ public class ControllerActivity extends Activity {
     public boolean onOptionsItemSelcted(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_settings:
-                Intent intent = new Intent(ControllerActivity.this, PreferancesActivity.class);
+                Intent intent = new Intent(ControllerActivity.this, PreferencesActivity.class);
                 return true;
         }
         return super.onOptionsItemSelected();
