@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by student on 4/1/14.
+ * Created by Dakota Kim on 4/1/14.
  */
 public class ControllerFragment extends Fragment {
     @Override

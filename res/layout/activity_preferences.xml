@@ -6,5 +6,12 @@
         <EditTextPreference
                 android:key="preference_key_ip_address"
                 android:title="IP Address"
-                android:summary="Host IP Address"></EditTextPreference>
-                  </PreferenceScreen>
+                android:summary=""
+                android:dialogTitle="Host IP Address"></EditTextPreference>
+
+         <EditTextPreference
+                 android:key="preference_port_number"
+                 android:title="Port Number"
+                 android:summary=""
+                 android:dialogTitle = "Port Number" ></EditTextPreference>
+</PreferenceScreen>
