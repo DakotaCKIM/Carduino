@@ -1,35 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg"
+                tools:context=".MainActivity" >
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" android:weightSum="1" android:orientation="vertical">
-
-    <TextClock
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textClock" android:layout_gravity="center"/>
     <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forward"
-            android:id="@+id/fwd" android:layout_gravity="center" android:layout_weight="0.09"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
             android:text="Right"
-            android:id="@+id/rgt" android:layout_gravity="right" android:layout_weight="0.07"/>
+            android:id="@+id/button3"
+            android:visibility="invisible" android:layout_centerVertical="true" android:layout_toRightOf="@+id/button4"
+            android:layout_marginLeft="31dp"/>
     <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:text="Down"
+            android:id="@+id/button2"
+            android:layout_alignStart="@+id/button"
+            android:visibility="invisible" android:layout_below="@+id/button4"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:text="Up"
+            android:id="@+id/button"
+            android:layout_marginLeft="70dp" android:layout_marginBottom="20dp"
+            android:layout_above="@+id/textView" android:layout_alignParentStart="true" android:visibility="invisible"/>
+    <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="" android:id="@+id/textView"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
             android:text="Left"
-            android:id="@+id/lft" android:layout_weight="0.05"/>
+            android:id="@+id/button4"
+            android:visibility="invisible"
+            android:layout_alignTop="@+id/button3" android:layout_alignParentStart="true"
+            android:layout_marginLeft="17dp"/>
     <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:id="@+id/bck" android:layout_gravity="center" android:layout_weight="0.13"/>
-
-</LinearLayout>
-
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:text="B"
+            android:id="@+id/button5"
+            android:layout_marginLeft="104dp"
+            android:layout_alignTop="@+id/textView" android:layout_toRightOf="@+id/textView"
+            android:visibility="invisible"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:text="A"
+            android:id="@+id/button6"
+            android:visibility="invisible" android:layout_alignBottom="@+id/textView"
+            android:layout_toRightOf="@+id/button5"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:text="Select"
+            android:id="@+id/button7"
+            android:layout_above="@+id/button9" android:layout_toLeftOf="@+id/textView" android:visibility="invisible"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:text="Start"
+            android:id="@+id/button8"
+            android:layout_alignTop="@+id/button7" android:layout_toRightOf="@+id/textView"
+            android:visibility="invisible"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="Preferences"
+            android:id="@+id/button9" android:layout_alignParentBottom="true" android:layout_alignParentEnd="true"
+            android:visibility="invisible"/>
+</RelativeLayout>
 
 
