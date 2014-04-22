@@ -33,12 +33,17 @@ public class UDPSender {
         socket.send(packet);
 
         // Log packet.
-        Log.d("UDP", String.format("Send packet %s on port $d to address %s", packet.toString(), port, ipAddress
+        Log.d("UDP", String.format("Send packet %s on port $d to address %s", packet.toString(), port, ipAddress);
         }
         catch (IOException e)
         {
             // Log error
             Log.e("UDP", "IOException occured during packet send", e);
         }
+
+
+
+        // Specifies whether the mail man is running.
+
     }
 }
