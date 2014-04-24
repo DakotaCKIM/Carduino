@@ -93,66 +93,38 @@ public class UDPSender {
 
 
                         if (forward) {
-                            String data = "N";
-                            int msg_length=data.length();
-                            byte[] message = data.getBytes();
-                            packet = new DatagramPacket(message, msg_length, local,port);
-                            logAndSendPacket(packet);
-
+                            logAndSendPacket("N", ipAddress, port);
                         }
                         else if(reverse) {
-                            String data = "S";
-                            int msg_length=data.length();
-                            byte[] message = data.getBytes();
-                            packet = new DatagramPacket(message, msg_length, local,port);
-                            logAndSendPacket(packet);
+                            logAndSendPacket("S", ipAddress, port);
                         }
 
                         if (left) {
-                            String data = "";
-                            int msg_length=data.length();
-                            byte[] message = data.getBytes();
-                            packet = new DatagramPacket(message, msg_length, local,port);
-                            logAndSendPacket(packet);
+                            logAndSendPacket("L", ipAddress, port);
 
                         }
                         else if (right) {
-                            String data = "r";
-                            int msg_length = data.length();
-                            byte[] message = data.getBytes();
-                            packet = new DatagramPacket(message, msg_length, local, port);
-                            socket.send(packet);
+                            logAndSendPacket("R", ipAddress, port);
                         }
 
                         /*stop simply ends up killing power to the motor in a specific direction
                           This must be sent every time you release a forward or back button */
                         else if (park) {
-                            String data = "p";
-                            int msg_length = data.length();
-                            byte[] message = data.getBytes();
-                            packet = new DatagramPacket(message, msg_length, local, port);
-                            socket.send(packet);
+                            logAndSendPacket("P", ipAddress, port);
                         }
                         /*
                             realign simply sends the signal "s" for straighten out the wheels by shifting the servo from
                             80/100 degrees back to 90 degrees or straight ahead.
                          */
                         else if (realign) {
-                            String data = "s"; //we should
-                            int msg_length=data.length();
-                            byte[] message = data.getBytes();
-                            packet = new DatagramPacket(message, msg_length, local,port);
-                            socket.send(packet);
+                            logAndSendPacket("F", ipAddress, port);
+
                         }
                         /*
                             authenticate sends the "hello" authentication string to the Engineering UDP server
                         */
                         else if (authenticate) {
-                            String data = "hello"; //we should
-                            int msg_length = data.length();
-                            byte[] message = data.getBytes();
-                            packet = new DatagramPacket(message, msg_length, local, port);
-                            socket.send(packet);
+                            logAndSendPacket("hello", ipAddress, port);
                         }
 
 
@@ -176,19 +148,37 @@ public class UDPSender {
     /**
      * Log an outgoing packet and send it
      *
-     * @param packet the packet to send
+     * @param packetContents the packet to send
      */
-    public static void logAndSendPacket(DatagramPacket packet) {
-        try {
-            socket.send(packet);
-            Log.d(UDPSender.class.getName(), String.format("Sent packet %s on port %d to address %s",
-                    packet.toString(), port, ipAddress));
-        } catch (IOException e) {
-            Log.e(UDPSender.class.getName(), String.format("Error! Exception occurred during sending of packet %s " +
-                    "Exception: %s",
-                    packet.toString(), e.toString()));
-        }
+    public static void logAndSendPacket(String packetContents, String ipAddress, int port)
+    {
 
+
+        try
+        {
+            //Creates a socket for communications.
+            DatagramSocket socket = new DatagramSocket(port);
+
+            InetAddress address = InetAddress.getByName(ipAddress);
+
+            // Package message.
+            int messageLength = packetContents.length();
+            byte[] byteMessage = packetContents.getBytes();
+
+            // Create packet.
+            DatagramPacket packet = new DatagramPacket(byteMessage, messageLength, port);
+
+            // Send packet
+            socket.send(packet);
+
+            // Log packet.
+            Log.d("UDP", String.format("Send packet %s on port $d to address %s", packet.toString(), port, ipAddress));
+        }
+        catch (IOException e)
+        {
+            // Log error
+            Log.e("UDP", "IOException occured during packet send", e);
+        }
     }
 
 
