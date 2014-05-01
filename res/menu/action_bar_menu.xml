@@ -3,6 +3,6 @@
     <!-- Settings, should always be in the overflow -->
     <item android:id="@+id/action_settings"
           android:title="settings"
-          android:icon="@drawable/ic_action_settings"
+          android:icon="@android:drawable/arrow_up_float"
           android:showAsAction="always" />
 </menu>
