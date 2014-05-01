@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_height="match_parent"
+                  android:layout_width="match_parent">
 
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:name="com.example.Carduino_CalculatedToast.PreferencesFragment"
-              android:id="@+id/id">
+    <PreferenceCategory
+            android:title="Arduino Host Information">
 
-    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                      android:layout_width="match_parent"
-                      android:layout_height="match_parent">
         <EditTextPreference
-                android:key="preference_key_ip_address"
+                android:key="pref_key_host_ip"
                 android:title="IP Address"
-                android:summary=""
-                android:dialogTitle="Host IP Address"></EditTextPreference>
+                android:summary="The IP address of the Arduino wifi shield to connect to"
+                android:dialogTitle="Host IP"/>
 
         <EditTextPreference
-                android:key="preference_port_number"
-                android:title="Port Number"
-                android:summary=""
-                android:dialogTitle = "Port Number" ></EditTextPreference>
-    </PreferenceScreen>
+                android:key="pref_key_host_port"
+                android:title="Port"
+                android:summary="The port of the Arduino wifi shield to connect to"
+                android:dialogTitle="Host port"
+                android:inputType="number"/>
 
-</fragment>
+
+    </PreferenceCategory>
+
+
+
+
+</PreferenceScreen>

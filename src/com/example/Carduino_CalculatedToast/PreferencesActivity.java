@@ -1,9 +1,14 @@
 package com.example.Carduino_CalculatedToast;
 
 
-/**
- * Created by Dakota Kim on 4/3/14.
- */
-public class PreferencesActivity {
+        import android.os.Bundle;
+        import android.preference.PreferenceActivity;
 
+public class PreferencesActivity extends PreferenceActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_preferences);
+    }
 }

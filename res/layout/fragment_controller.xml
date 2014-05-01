@@ -5,7 +5,7 @@
                 android:background="@drawable/bg"
                 tools:context=".MainActivity" >
 
-    //All buttons are named logically they start with a uppercase letter
+    //All buttons are named logically they start with a uppercase letter (full word)
 
     <Button
             style="?android:attr/buttonStyleSmall"
