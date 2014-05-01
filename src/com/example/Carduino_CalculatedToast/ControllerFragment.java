@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import com.fsc.Carduino.Datagram.UDPMailMan;
+import com.example.Carduino_CalculatedToast.UDPSender;
 
 /**
  * Fragment to display car controller

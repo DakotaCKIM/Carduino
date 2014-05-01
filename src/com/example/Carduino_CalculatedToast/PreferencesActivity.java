@@ -1,6 +1,5 @@
 package com.example.Carduino_CalculatedToast;
 
-
         import android.os.Bundle;
         import android.preference.PreferenceActivity;
 

@@ -12,7 +12,7 @@ import java.net.*;
  */
 public class UDPSender {
 
-    private static final String TAG = UDPSender.class.getName();
+
 
     // Ip address and port to send to
     public static int port = 0;
@@ -22,6 +22,7 @@ public class UDPSender {
     private static InetAddress local;
 
     // Current engaged directions
+
     public static boolean forward = false;
     public static boolean reverse = false;
     public static boolean left = false;
@@ -89,9 +90,6 @@ public class UDPSender {
 
                 // While we're set to run, and while there is some command to send, loop and send appropriate packets
                 while (isRunning) {  // isRunning is set to false by the method setRunningState(false)
-                    try {
-
-
                         if (forward) {
                             logAndSendPacket("N", ipAddress, port);
                         }
@@ -126,20 +124,8 @@ public class UDPSender {
                         else if (authenticate) {
                             logAndSendPacket("hello", ipAddress, port);
                         }
-
-
-                    } catch (SocketException e) {
-                        Log.e(TAG, "Socket exception!", e);
-                    } catch (UnknownHostException e) {
-                        Log.e(TAG, "UnknownHost exception!", e);
-                    } catch (IOException e) {
-                        Log.e(TAG, "IOexception!", e);
-                    }
                 }
-
                 return null;
-
-
             }
         }.execute();
 
