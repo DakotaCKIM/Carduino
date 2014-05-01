@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.util.Log;
 import com.example.Carduino_CalculatedToast.UDPSender;
 
 /**
@@ -55,12 +56,12 @@ public class ControllerFragment extends Fragment {
             public void onClick(View powerButton) {
                 if (UDPSender.isRunning()) {
                     UDPSender.setRunningState(false);
-                    powerButton.setBackgroundResource(R.id.Select);
+                    powerButton.setBackgroundResource(R.drawable.bg);
 
                 }
                 else {
                     UDPSender.setRunningState(true);
-                    powerButton.setBackgroundResource(R.id.Start);
+                    powerButton.setBackgroundResource(R.drawable.bg);
                     UDPSender.beginUdpLoop();
                     UDPSender.authenticate = true; //authenticate to the server
                     UDPSender.authenticate = false; // stop sending authentication messages
@@ -68,7 +69,7 @@ public class ControllerFragment extends Fragment {
             }
         });
 
-        Button upButton = (Button) viewTreeRoot.findViewById(R.id.Up);
+        Button upButton = (Button) viewTreeRoot.findViewById(R.id.A);
         upButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -76,6 +77,7 @@ public class ControllerFragment extends Fragment {
                     case MotionEvent.ACTION_DOWN:
                         UDPSender.park = false;  //quit stopping
                         UDPSender.forward = true; //go
+                        Log.d("controller Fragment","Up button pressed");
                         break;
                     case MotionEvent.ACTION_UP:
                         UDPSender.forward = false; //stop going
@@ -89,7 +91,7 @@ public class ControllerFragment extends Fragment {
 
         // park = stop
 
-        Button downButton = (Button) viewTreeRoot.findViewById(R.id.Down);
+        Button downButton = (Button) viewTreeRoot.findViewById(R.id.B);
         downButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

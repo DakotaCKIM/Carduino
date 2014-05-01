@@ -39,6 +39,7 @@ public class UDPSender {
 
     // The packet to send; we will reuse this object for each send to avoid unnecessary memory usage
     static DatagramPacket packet;
+    private static InetAddress address;
 
     public static String getIpAddress() {
         return ipAddress;
@@ -69,15 +70,16 @@ public class UDPSender {
      */
     public static void beginUdpLoop() {
 
-        try {
-            socket = new DatagramSocket(port);
-            local = InetAddress.getByName(ipAddress);
-        } catch (SocketException e) {
-            Log.e(UDPSender.class.getName(), String.format("Could not instantiate DatagramSocket object, " +
-                    "exception: %s", e.toString()));
-        } catch (UnknownHostException e) {
-            Log.e(UDPSender.class.getName(), "Unknown host exception", e);
-        }
+            //Creates a socket for communications.
+            try {
+                socket = new DatagramSocket(port);
+                address = InetAddress.getByName(ipAddress);
+            } catch (SocketException e) {
+                Log.e(UDPSender.class.getName(), String.format("Could not instantiate DatagramSocket object, " +
+                        "exception: %s", e.toString()));
+            } catch (UnknownHostException e) {
+                Log.e(UDPSender.class.getName(), "Unknown host exception", e);
+            }
 
         // Spawn a new thread to send UDP messages
         new AsyncTask<Void, Void, Void>() {
@@ -85,44 +87,47 @@ public class UDPSender {
             @Override
             protected Void doInBackground(Void... params) {
 
+
+
                 // Start looping the first time we're called
                 isRunning = true;
 
                 // While we're set to run, and while there is some command to send, loop and send appropriate packets
                 while (isRunning) {  // isRunning is set to false by the method setRunningState(false)
                         if (forward) {
-                            logAndSendPacket("N", ipAddress, port);
+                            logAndSendPacket("N");
                         }
                         else if(reverse) {
-                            logAndSendPacket("S", ipAddress, port);
+                            logAndSendPacket("S");
                         }
 
                         if (left) {
-                            logAndSendPacket("L", ipAddress, port);
+                            logAndSendPacket("L");
 
                         }
+
                         else if (right) {
-                            logAndSendPacket("R", ipAddress, port);
+                            logAndSendPacket("R");
                         }
 
                         /*stop simply ends up killing power to the motor in a specific direction
                           This must be sent every time you release a forward or back button */
                         else if (park) {
-                            logAndSendPacket("P", ipAddress, port);
+                            logAndSendPacket("P");
                         }
                         /*
                             realign simply sends the signal "s" for straighten out the wheels by shifting the servo from
                             80/100 degrees back to 90 degrees or straight ahead.
                          */
                         else if (realign) {
-                            logAndSendPacket("F", ipAddress, port);
+                            logAndSendPacket("F");
 
                         }
                         /*
                             authenticate sends the "hello" authentication string to the Engineering UDP server
                         */
                         else if (authenticate) {
-                            logAndSendPacket("hello", ipAddress, port);
+                            logAndSendPacket("hello");
                         }
                 }
                 return null;
@@ -136,23 +141,20 @@ public class UDPSender {
      *
      * @param packetContents the packet to send
      */
-    public static void logAndSendPacket(String packetContents, String ipAddress, int port)
+    public static void logAndSendPacket(String packetContents)
     {
 
 
         try
         {
-            //Creates a socket for communications.
-            DatagramSocket socket = new DatagramSocket(port);
 
-            InetAddress address = InetAddress.getByName(ipAddress);
 
             // Package message.
             int messageLength = packetContents.length();
             byte[] byteMessage = packetContents.getBytes();
 
             // Create packet.
-            DatagramPacket packet = new DatagramPacket(byteMessage, messageLength, port);
+            DatagramPacket packet = new DatagramPacket(byteMessage, messageLength, address,  port);
 
             // Send packet
             socket.send(packet);

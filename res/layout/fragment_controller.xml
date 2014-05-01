@@ -13,7 +13,6 @@
             android:layout_height="55dp"
             android:text="Right"
             android:id="@+id/Right"
-            android:visibility="invisible"
             android:layout_above="@+id/Down" android:layout_toRightOf="@+id/Up"/>
     <Button
             style="?android:attr/buttonStyleSmall"
@@ -21,7 +20,6 @@
             android:layout_height="55dp"
             android:text="Down"
             android:id="@+id/Down"
-            android:visibility="invisible"
             android:layout_above="@+id/Select" android:layout_alignParentStart="true" android:layout_marginLeft="69dp"/>
     <Button
             style="?android:attr/buttonStyleSmall"
@@ -29,7 +27,6 @@
             android:layout_height="55dp"
             android:text="Up"
             android:id="@+id/Up"
-            android:visibility="invisible"
             android:layout_above="@+id/Left" android:layout_toRightOf="@+id/Left"/>
     <TextView
             android:layout_width="wrap_content"
@@ -43,7 +40,6 @@
             android:layout_height="50dp"
             android:text="Left"
             android:id="@+id/Left"
-            android:visibility="invisible"
             android:layout_centerVertical="true" android:layout_alignParentStart="true"/>
     <Button
             style="?android:attr/buttonStyleSmall"
@@ -52,15 +48,13 @@
             android:text="B"
             android:id="@+id/B"
             android:layout_marginLeft="104dp"
-            android:layout_alignTop="@+id/textView" android:layout_toRightOf="@+id/textView"
-            android:visibility="invisible"/>
+            android:layout_alignTop="@+id/textView" android:layout_toRightOf="@+id/textView"></Button>
     <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="70dp"
             android:layout_height="55dp"
             android:text="A"
             android:id="@+id/A"
-            android:visibility="invisible"
             android:layout_alignBottom="@+id/textView" android:layout_toRightOf="@+id/B"/>
     <Button
             style="?android:attr/buttonStyleSmall"
@@ -68,14 +62,14 @@
             android:layout_height="50dp"
             android:text="Select"
             android:id="@+id/Select"
-            android:visibility="invisible" android:layout_above="@+id/Preferences" android:layout_toLeftOf="@+id/B"/>
+            android:layout_above="@+id/Preferences" android:layout_toLeftOf="@+id/B"/>
     <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:text="Start"
             android:id="@+id/Start"
-            android:visibility="invisible" android:layout_alignTop="@+id/Select"
+            android:layout_alignTop="@+id/Select"
             android:layout_toRightOf="@+id/textView"/>
     <Button
             style="?android:attr/buttonStyleSmall"
@@ -83,21 +77,21 @@
             android:layout_height="30dp"
             android:text="Preferences"
             android:id="@+id/Preferences" android:layout_alignParentBottom="true" android:layout_alignParentEnd="true"
-            android:visibility="invisible"/>
+            />
     <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Align"
             android:id="@+id/Realign" android:layout_above="@+id/A" android:layout_toLeftOf="@+id/B"
-            android:layout_alignStart="@+id/Select" android:visibility="invisible"/>
+            android:layout_alignStart="@+id/Select" />
     <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Connect"
             android:id="@+id/Connect" android:layout_alignTop="@+id/Realign" android:layout_toRightOf="@+id/textView"
-            android:layout_alignEnd="@+id/Start" android:visibility="invisible"/>
+            android:layout_alignEnd="@+id/Start" />
 
 </RelativeLayout>
 
