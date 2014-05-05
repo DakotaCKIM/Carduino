@@ -49,7 +49,7 @@ public class ControllerFragment extends Fragment {
 
         // Set callbacks for all buttons
 
-        Button powerButton = (Button) viewTreeRoot.findViewById(R.id.Start);
+        Button powerButton = (Button)  viewTreeRoot.findViewById(R.id.Start);
         powerButton.setActivated(false);
         powerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +57,7 @@ public class ControllerFragment extends Fragment {
                 if (UDPSender.isRunning()) {
                     UDPSender.setRunningState(false);
                     powerButton.setBackgroundResource(R.drawable.bg);
-
+	                Log.d("controller fragment.", "Start button pressed");
                 }
                 else {
                     UDPSender.setRunningState(true);
@@ -65,6 +65,7 @@ public class ControllerFragment extends Fragment {
                     UDPSender.beginUdpLoop();
                     UDPSender.authenticate = true; //authenticate to the server
                     UDPSender.authenticate = false; // stop sending authentication messages
+	                Log.d("controller fragment.", "Start button pressed on");
                 }
             }
         });
@@ -77,7 +78,7 @@ public class ControllerFragment extends Fragment {
                     case MotionEvent.ACTION_DOWN:
                         UDPSender.park = false;  //quit stopping
                         UDPSender.forward = true; //go
-                        Log.d("controller Fragment","Up button pressed");
+                        Log.d("controller Fragment","A button pressed");
                         break;
                     case MotionEvent.ACTION_UP:
                         UDPSender.forward = false; //stop going
@@ -99,7 +100,8 @@ public class ControllerFragment extends Fragment {
                     case MotionEvent.ACTION_DOWN:
                         UDPSender.park = false; // quit sending stop messages
                         UDPSender.reverse = true;//go
-                        break;
+	                    Log.d("controller Fragment","B button pressed");
+	                    break;
                     case MotionEvent.ACTION_UP:
                         UDPSender.reverse = false;//stop sending signal to go
                         UDPSender.park = true;//kill power
@@ -118,7 +120,8 @@ public class ControllerFragment extends Fragment {
                     case MotionEvent.ACTION_DOWN:
                         UDPSender.realign = false; //stop telling it to realign
                         UDPSender.left = true; //start turning left
-                        break;
+	                    Log.d("controller Fragment","Left button pressed");
+	                    break;
                     case MotionEvent.ACTION_UP:
                         UDPSender.left = false; //stop sending left turn signals
                         UDPSender.realign = true; //realign the wheels
@@ -137,7 +140,8 @@ public class ControllerFragment extends Fragment {
                     case MotionEvent.ACTION_DOWN:
                         UDPSender.realign = false;
                         UDPSender.right = true;
-                        break;
+	                    Log.d("controller Fragment","Right button pressed");
+	                    break;
                     case MotionEvent.ACTION_UP:
                         UDPSender.right = false; //stop sending right turn signals
                         UDPSender.realign = true; //reset wheels to straight

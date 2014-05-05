@@ -39,6 +39,7 @@ public class UDPSender {
 
     // The packet to send; we will reuse this object for each send to avoid unnecessary memory usage
     static DatagramPacket packet;
+
     private static InetAddress address;
 
     public static String getIpAddress() {
@@ -73,7 +74,7 @@ public class UDPSender {
             //Creates a socket for communications.
             try {
                 socket = new DatagramSocket(port);
-                address = InetAddress.getByName(ipAddress);
+                local = InetAddress.getByName(ipAddress);
             } catch (SocketException e) {
                 Log.e(UDPSender.class.getName(), String.format("Could not instantiate DatagramSocket object, " +
                         "exception: %s", e.toString()));
@@ -86,8 +87,6 @@ public class UDPSender {
 
             @Override
             protected Void doInBackground(Void... params) {
-
-
 
                 // Start looping the first time we're called
                 isRunning = true;
@@ -154,7 +153,7 @@ public class UDPSender {
             byte[] byteMessage = packetContents.getBytes();
 
             // Create packet.
-            DatagramPacket packet = new DatagramPacket(byteMessage, messageLength, address,  port);
+            DatagramPacket packet = new DatagramPacket(byteMessage, messageLength, local, port);
 
             // Send packet
             socket.send(packet);
