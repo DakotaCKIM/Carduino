@@ -57,15 +57,14 @@ public class ControllerFragment extends Fragment {
                 if (UDPSender.isRunning()) {
                     UDPSender.setRunningState(false);
                     powerButton.setBackgroundResource(R.drawable.bg);
-	                Log.d("controller fragment.", "Start button pressed");
+	                Log.d("controller fragment.", "Start button turned off.");
                 }
                 else {
                     UDPSender.setRunningState(true);
                     powerButton.setBackgroundResource(R.drawable.bg);
                     UDPSender.beginUdpLoop();
                     UDPSender.authenticate = true; //authenticate to the server
-                    UDPSender.authenticate = false; // stop sending authentication messages
-	                Log.d("controller fragment.", "Start button pressed on");
+	                Log.d("controller fragment.", "Start button turned on.");
                 }
             }
         });

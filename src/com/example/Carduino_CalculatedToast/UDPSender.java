@@ -127,6 +127,7 @@ public class UDPSender {
                         */
                         else if (authenticate) {
                             logAndSendPacket("hello");
+                            UDPSender.authenticate = false;
                         }
                 }
                 return null;
