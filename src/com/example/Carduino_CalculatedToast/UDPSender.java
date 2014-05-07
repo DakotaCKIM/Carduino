@@ -94,32 +94,32 @@ public class UDPSender {
                 // While we're set to run, and while there is some command to send, loop and send appropriate packets
                 while (isRunning) {  // isRunning is set to false by the method setRunningState(false)
                         if (forward) {
-                            logAndSendPacket("N");
+                            logAndSendPacket("d");
                         }
                         else if(reverse) {
-                            logAndSendPacket("S");
+                            logAndSendPacket("b");
                         }
 
                         if (left) {
-                            logAndSendPacket("L");
+                            logAndSendPacket("l");
 
                         }
 
                         else if (right) {
-                            logAndSendPacket("R");
+                            logAndSendPacket("r");
                         }
 
                         /*stop simply ends up killing power to the motor in a specific direction
                           This must be sent every time you release a forward or back button */
                         else if (park) {
-                            logAndSendPacket("P");
+                            logAndSendPacket("p");
                         }
                         /*
                             realign simply sends the signal "s" for straighten out the wheels by shifting the servo from
                             80/100 degrees back to 90 degrees or straight ahead.
                          */
                         else if (realign) {
-                            logAndSendPacket("F");
+                            logAndSendPacket("s");
 
                         }
                         /*

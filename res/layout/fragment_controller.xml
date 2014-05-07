@@ -67,13 +67,11 @@
             android:id="@+id/Select"
             android:layout_above="@+id/Preferences" android:layout_toLeftOf="@+id/B"/>
     <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:text="Start"
             android:id="@+id/Start"
-            android:layout_alignTop="@+id/Select"
-            android:layout_toRightOf="@+id/textView"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/android_button"
+            android:layout_alignBottom="@+id/Select" android:layout_alignEnd="@+id/Connect"/>
     <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="30dp"
