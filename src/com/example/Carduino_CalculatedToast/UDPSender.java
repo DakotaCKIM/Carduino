@@ -127,6 +127,7 @@ public class UDPSender {
                         */
                         else if (authenticate) {
                             logAndSendPacket("hello");
+                            logAndSendPacket("It's car time!");
                             UDPSender.authenticate = false;
                         }
                 }
